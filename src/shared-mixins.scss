@@ -1,0 +1,9 @@
+@use 'sass:math';
+
+// Define the base font size for conversion (default 16px)
+$base-font-size: 16px;
+
+// Function to convert px to rem
+@function px-to-rem($px) {
+  @return math.div($px, $base-font-size) * 1rem;
+}

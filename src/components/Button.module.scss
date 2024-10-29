@@ -1,0 +1,115 @@
+@import '../shared-mixins.scss';
+
+/* Shared focus styles */
+@mixin button-focus {
+  outline: 2px solid var(--prima-button-color-inverse);
+  outline-offset: 2px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  cursor: pointer;
+  font-size: var(--prima-font-size-m);
+  font-family: var(--prima-font-family);
+  font-weight: 700;
+  transition: background-color 0.3s;
+  transition: border-color 0.3s;
+
+
+  &.disabled {
+    background-color: #e0e0e0;
+    color: #a0a0a0;
+    cursor: not-allowed;
+  }
+}
+
+.button__pill {
+  min-width: px-to-rem(62px);
+  min-height: px-to-rem(42px);
+  border-radius: px-to-rem(100px);
+  padding-left: var(--prima-spacing-xs);
+  padding-right: var(--prima-spacing-xs);
+
+  margin-right: var(--prima-spacing-2xs);
+
+  @media (min-width: 768px) {
+    /* Styles for tablet and above */
+    min-width: px-to-rem(70px);
+    min-height: px-to-rem(50px);
+    padding-top: var(--prima-spacing-4xs);
+    padding-right: var(--prima-spacing-s);
+    padding-bottom: var(--prima-spacing-4xs);
+    padding-left: var(--prima-spacing-s);
+
+    margin-right: var(--prima-spacing-xs);
+  }
+
+  &--selected {
+    background-color: var(--prima-button-color-inverse);
+    color: var(--prima-white);
+    border: 1px solid var(--prima-button-color-inverse);
+
+    &:hover {
+      background-color: var(--prima-button-color-inverse-hover);
+    }
+    &:active {
+      background-color: var(--prima-button-color-inverse-active);
+    }
+    &:focus {
+      @include button-focus;
+    }
+  }
+
+  &--unselected {
+    background-color: var(--prima-white);
+    border: 1px solid var(--outline-color);
+    color: var(--prima-button-color-inverse);
+
+    &:hover {
+      background-color: var(--surface-hover-color);
+    }
+
+    &:active {
+      background-color: var(--SurfaceHigh);
+    }
+    &:focus, [role="tab"]::focus {
+      @include button-focus;
+    }
+  }
+}
+
+.button__underline {
+  width: auto;
+  background-color: var(--prima-white);
+  min-width: auto;
+  min-height: px-to-rem(42px);
+
+  margin-right: var(--prima-spacing-l);
+
+  &--selected {
+    border-bottom: 3px solid var(--prima-button-color-inverse);
+  }
+
+  &--unselected {
+    border-bottom: 3px solid transparent;
+
+    &:hover, &:active, &:focus {
+      border-bottom: 3px solid var(--outline-hover-color);
+    }
+  }
+
+  @media (min-width: 768px) {
+    /* Styles for tablet and above */
+    min-height: px-to-rem(50px);
+    margin-right: var(--prima-spacing-xl);
+  }
+
+  &:focus {
+    @include button-focus;
+    border-radius: px-to-rem(2px);
+  }
+}
