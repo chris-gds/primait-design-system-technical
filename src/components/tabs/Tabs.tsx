@@ -63,7 +63,11 @@ const Tabs: React.FC<TabsProps> = ({ tabConfigs }) => {
         ref={tabsWrapperRef}
       >
         {tabConfigs.map((tab, index) => (
-          <li key={tab.label} role="presentation" className={styles.tabsWrapper}>
+          <li
+            key={tab.label}
+            role="presentation"
+            className={styles.tabsWrapper}
+          >
             <Button
               id={`tab__${tab.label}`}
               ariaControls={`panel__${index + 1}`}
