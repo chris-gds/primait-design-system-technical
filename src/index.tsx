@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Tabs from "./components/Tabs"; 
+import Tabs from "./components/tabs/Tabs"; 
 import "./index.css";
 
 const root = ReactDOM.createRoot(

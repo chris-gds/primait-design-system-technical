@@ -2,7 +2,7 @@
 // https://www.w3.org/WAI/ARIA/apg/patterns/tabs/examples/tabs-automatic/
 
 import React, { useState, useRef } from "react";
-import Button from "./Button"; // Ensure you have the Button component imported
+import Button from "../button/Button"; // Ensure you have the Button component imported
 import styles from "./Tabs.module.scss";
 
 // Config to change the style of the tabs to either 

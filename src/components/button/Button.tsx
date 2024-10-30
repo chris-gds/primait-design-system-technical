@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import styles from "./Button.module.scss";
-import Badge from "./Badge"; 
+import Badge from "../badge/Badge"; 
 
 interface ButtonProps {
   id: string;
