@@ -1,154 +1,145 @@
 import React from "react";
+import { Meta, Story } from "@storybook/react";
 import Tabs from "./Tabs";
 
 export default {
-  title: "Components/Tabs/All Variations",
+  title: "Components/Tabs",
   component: Tabs,
+  argTypes: {
+    label1: { control: 'text' },
+    badgeLabel1: { control: 'text' },
+    badgeVariant1: {
+      control: 'select',
+      options: [undefined, 'neutral', 'positive', 'negative', null],
+    },
+    variant1: {
+      control: 'select',
+      options: ['pill', 'underline'],
+    },
+    label2: { control: 'text' },
+    badgeLabel2: { control: 'text' },
+    badgeVariant2: {
+      control: 'select',
+      options: [undefined, 'neutral', 'positive', 'negative', null],
+    },
+    variant2: {
+      control: 'select',
+      options: ['pill', 'underline'],
+    },
+    label3: { control: 'text' },
+    badgeLabel3: { control: 'text' },
+    badgeVariant3: {
+      control: 'select',
+      options: [undefined, 'neutral', 'positive', 'negative', null],
+    },
+    variant3: {
+      control: 'select',
+      options: ['pill', 'underline'],
+    },
+    label4: { control: 'text' },
+    badgeLabel4: { control: 'text' },
+    badgeVariant4: {
+      control: 'select',
+      options: [undefined, 'neutral', 'positive', 'negative', null],
+    },
+    variant4: {
+      control: 'select',
+      options: ['pill', 'underline'],
+    },
+    label5: { control: 'text' },
+    badgeLabel5: { control: 'text' },
+    badgeVariant5: {
+      control: 'select',
+      options: [undefined, 'neutral', 'positive', 'negative', null],
+    },
+    variant5: {
+      control: 'select',
+      options: ['pill', 'underline'],
+    },
+  },
+} as Meta;
+
+const Template: Story = (args) => {
+  const tabConfigs = [
+    {
+      label: args.label1,
+      badgeLabel: args.badgeLabel1,
+      badgeVariant: args.badgeVariant1,
+      variant: args.variant1,
+    },
+    {
+      label: args.label2,
+      badgeLabel: args.badgeLabel2,
+      badgeVariant: args.badgeVariant2,
+      variant: args.variant2,
+    },
+    {
+      label: args.label3,
+      badgeLabel: args.badgeLabel3,
+      badgeVariant: args.badgeVariant3,
+      variant: args.variant3,
+    },
+    {
+      label: args.label4,
+      badgeLabel: args.badgeLabel4,
+      badgeVariant: args.badgeVariant4,
+      variant: args.variant4,
+    },
+    {
+      label: args.label5,
+      badgeLabel: args.badgeLabel5,
+      badgeVariant: args.badgeVariant5,
+      variant: args.variant5,
+    },
+  ];
+
+  return <Tabs tabConfigs={tabConfigs} />;
 };
 
-const Template = (args) => <Tabs {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  tabConfigs: [
-    { label: "Emails", badgeLabel: "", badgeVariant: null, variant: "pill" },
-    {
-      label: "Files",
-      badgeLabel: "Status",
-      badgeVariant: "neutral",
-      variant: "pill",
-    },
-    {
-      label: "Edits",
-      badgeLabel: "Warning",
-      badgeVariant: "negative",
-      variant: "pill",
-    },
-    { label: "Dashboard", badgeLabel: "", badgeVariant: null, variant: "pill" },
-    { label: "Messages", badgeLabel: "", badgeVariant: null, variant: "pill" },
-  ],
+export const Pill = Template.bind({});
+Pill.args = {
+  label1: "Emails",
+  badgeLabel1: "New",
+  badgeVariant1: "neutral",
+  variant1: "pill",
+  label2: "Files",
+  badgeLabel2: "Warning",
+  badgeVariant2: "negative",
+  variant2: "pill",
+  label3: "Edits",
+  badgeLabel3: "",
+  badgeVariant3: null,
+  variant3: "pill",
+  label4: "Dashboard",
+  badgeLabel4: "Good",
+  badgeVariant4: "positive",
+  variant4: "pill",
+  label5: "Messages",
+  badgeLabel5: "",
+  badgeVariant5: null,
+  variant5: "pill",
 };
 
-export const PillWithBadges = Template.bind({});
-PillWithBadges.args = {
-  tabConfigs: [
-    {
-      label: "Emails",
-      badgeLabel: "New",
-      badgeVariant: "neutral",
-      variant: "pill",
-    },
-    {
-      label: "Files",
-      badgeLabel: "Status",
-      badgeVariant: "neutral",
-      variant: "pill",
-    },
-    {
-      label: "Edits",
-      badgeLabel: "Warning",
-      badgeVariant: "negative",
-      variant: "pill",
-    },
-    {
-      label: "Dashboard",
-      badgeLabel: "Good",
-      badgeVariant: "positive",
-      variant: "pill",
-    },
-    { label: "Messages", badgeLabel: "", badgeVariant: null, variant: "pill" },
-  ],
-};
-
-export const UnderlineWithBadges = Template.bind({});
-UnderlineWithBadges.args = {
-  tabConfigs: [
-    {
-      label: "Emails",
-      badgeLabel: "",
-      badgeVariant: null,
-      variant: "underline",
-    },
-    {
-      label: "Files",
-      badgeLabel: "Warning",
-      badgeVariant: "negative",
-      variant: "underline",
-    },
-    {
-      label: "Edits",
-      badgeLabel: "",
-      badgeVariant: null,
-      variant: "underline",
-    },
-    {
-      label: "Dashboard",
-      badgeLabel: "Good",
-      badgeVariant: "positive",
-      variant: "underline",
-    },
-    {
-      label: "Messages",
-      badgeLabel: "",
-      badgeVariant: null,
-      variant: "underline",
-    },
-  ],
-};
-
-export const AllVariants = Template.bind({});
-AllVariants.args = {
-  tabConfigs: [
-    { label: "Emails", badgeLabel: "", badgeVariant: null, variant: "pill" },
-    {
-      label: "Files",
-      badgeLabel: "Status",
-      badgeVariant: "neutral",
-      variant: "pill",
-    },
-    {
-      label: "Edits",
-      badgeLabel: "Warning",
-      badgeVariant: "negative",
-      variant: "pill",
-    },
-    { label: "Dashboard", badgeLabel: "", badgeVariant: null, variant: "pill" },
-    { label: "Messages", badgeLabel: "", badgeVariant: null, variant: "pill" },
-  ],
-};
-
-export const AllVariantsWithBadges = Template.bind({});
-AllVariantsWithBadges.args = {
-  tabConfigs: [
-    {
-      label: "Emails",
-      badgeLabel: "New",
-      badgeVariant: "neutral",
-      variant: "underline",
-    },
-    {
-      label: "Files",
-      badgeLabel: "Warning",
-      badgeVariant: "negative",
-      variant: "underline",
-    },
-    {
-      label: "Edits",
-      badgeLabel: "",
-      badgeVariant: null,
-      variant: "underline",
-    },
-    {
-      label: "Dashboard",
-      badgeLabel: "Good",
-      badgeVariant: "positive",
-      variant: "underline",
-    },
-    {
-      label: "Messages",
-      badgeLabel: "",
-      badgeVariant: null,
-      variant: "underline",
-    },
-  ],
+export const Underline = Template.bind({});
+Underline.args = {
+  label1: "Emails",
+  badgeLabel1: "New",
+  badgeVariant1: "neutral",
+  variant1: "underline",
+  label2: "Files",
+  badgeLabel2: "Warning",
+  badgeVariant2: "negative",
+  variant2: "underline",
+  label3: "Edits",
+  badgeLabel3: "",
+  badgeVariant3: null,
+  variant3: "underline",
+  label4: "Dashboard",
+  badgeLabel4: "Good",
+  badgeVariant4: "positive",
+  variant4: "underline",
+  label5: "Messages",
+  badgeLabel5: "",
+  badgeVariant5: null,
+  variant5: "underline",
 };
