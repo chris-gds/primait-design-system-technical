@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Tabs from "./components/tabs/Tabs"; 
+import Tabs from "./components/tabs/Tabs";
 import "./index.css";
 
 const root = ReactDOM.createRoot(
@@ -9,6 +9,11 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <Tabs/>
-  </React.StrictMode>
+    <main>
+      <h1 className="visually-hidden">
+        Design System Frontend Technical Prima IT
+      </h1>
+      <Tabs />
+    </main>
+  </React.StrictMode>,
 );

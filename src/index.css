@@ -10,15 +10,15 @@ html {
 
 :root {
   color-scheme: light dark;
-  --c-light: #FFFFFF;
+  --c-light: #ffffff;
   --c-dark: #111111;
-  
-  --prima-white: #FFFFFF;
-  --prima-dummy-content: #D9D9D9;
 
-  --SurfaceHigh: #F1F1F7;
-  --SurfacePositive: #B1FFC7;
-  --SurfaceNegative: #FFBFB1;
+  --prima-white: #ffffff;
+  --prima-dummy-content: #d9d9d9;
+
+  --SurfaceHigh: #f1f1f7;
+  --SurfacePositive: #b1ffc7;
+  --SurfaceNegative: #ffbfb1;
 
   --prima-font-size: 0.75rem; /* 12px */
   --prima-font-size-m: 0.9rem; /* 14px */
@@ -36,14 +36,13 @@ html {
   --prima-spacing-xl: 2rem; /* 32px */
   --prima-spacing-2xl: 3rem; /* 48px */
 
-  --prima-button-color-inverse: #1B2134;
-  --prima-button-color-inverse-hover: #343A4E;
-  --prima-button-color-inverse-active: #585D71;
+  --prima-button-color-inverse: #1b2134;
+  --prima-button-color-inverse-hover: #343a4e;
+  --prima-button-color-inverse-active: #585d71;
 
-  --outline-color: #D3D3DC;
-  --surface-hover-color: #F6F6FA;
-  --outline-hover-color: #C4C5CF;
-
+  --outline-color: #d3d3dc;
+  --surface-hover-color: #f6f6fa;
+  --outline-hover-color: #c4c5cf;
 }
 
 body {

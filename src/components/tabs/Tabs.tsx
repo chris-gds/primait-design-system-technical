@@ -1,25 +1,29 @@
-// Accessible Tab Pattern 
+// Accessible Tab Pattern
 // https://www.w3.org/WAI/ARIA/apg/patterns/tabs/examples/tabs-automatic/
 
 import React, { useState, useRef } from "react";
 import Button from "../button/Button"; // Ensure you have the Button component imported
 import styles from "./Tabs.module.scss";
 
-// Config to change the style of the tabs to either 
-// "pill" or "underline"
-const tabVariant = "pill";
-
 // Options for badgeVariant: "neutral", "positive" & "negative".
+// Options for variant: "pill", "underline".
 const tabConfigs = [
-  { label: "Emails", badgeLabel: "", badgeVariant: undefined },
-  { label: "Files", badgeLabel: "Warning", badgeVariant: "negative" },
-  { label: "Edits", badgeLabel: "", badgeVariant: undefined },
-  { label: "Dashboard", badgeLabel: "Good", badgeVariant: "positive" },
-  { label: "Messages", badgeLabel: "", badgeVariant: undefined },
-].map(tab => ({
-  ...tab,
-  variant: tabVariant,
-}));
+  { label: "Emails", badgeLabel: "", badgeVariant: undefined, variant: "pill" },
+  {
+    label: "Files",
+    badgeLabel: "Status",
+    badgeVariant: "neutral",
+    variant: "pill",
+  },
+  {
+    label: "Edits",
+    badgeLabel: "Warning",
+    badgeVariant: "negative",
+    variant: "pill",
+  },
+  { label: "Dashboard", badgeLabel: "", badgeVariant: null, variant: "pill" },
+  { label: "Messages", badgeLabel: "", badgeVariant: null, variant: "pill" },
+];
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -35,7 +39,10 @@ const Tabs = () => {
     if (container) {
       const activeTabElement = container.children[tabIndex - 1] as HTMLElement;
       if (activeTabElement) {
-        activeTabElement.scrollIntoView({ behavior: "smooth", inline: "center" });
+        activeTabElement.scrollIntoView({
+          behavior: "smooth",
+          inline: "center",
+        });
       }
     }
 
@@ -64,22 +71,28 @@ const Tabs = () => {
   return (
     <div className={styles.tabsOuter}>
       <h2 className="visually-hidden">Menu</h2>
-      <ul className={styles.tabsContainer}
+      <ul
+        className={styles.tabsContainer}
         role="tablist"
         onKeyDown={handleKeyDown}
         tabIndex={0}
       >
         {tabConfigs.map((tab, index) => (
-          <li key={tab.label} role="presentation" className={styles.tabsWrapper} ref={tabsWrapperRef}>
+          <li
+            key={tab.label}
+            role="presentation"
+            className={styles.tabsWrapper}
+            ref={tabsWrapperRef}
+          >
             <Button
               key={index + 1}
               ariaControls={`panel__${index + 1}`}
               label={tab.label}
               onClick={() => handleTabInteraction(index + 1)}
               selected={activeTab === index + 1}
-              variant={tab.variant as "pill" | "underline" | undefined}
+              variant={tab.variant}
               badgeLabel={tab.badgeLabel}
-              badgeVariant={tab.badgeVariant as "negative" | "positive" | "neutral" | undefined}
+              badgeVariant={tab.badgeVariant}
               ref={(el) => (buttonRefs.current[index] = el)} // Assign ref to each button
             />
           </li>
@@ -93,10 +106,9 @@ const Tabs = () => {
             key={index + 1}
             role="tabpanel"
             id={`panel__${index}`}
-            className={`${styles.tabContent} ${activeTab === index + 1 ? styles['tabContent--active'] : ''}`}
+            className={`${styles.tabContent} ${activeTab === index + 1 ? styles["tabContent--active"] : ""}`}
           >
             <p>Content for {tab.label}</p>
-
           </div>
         ))}
       </div>

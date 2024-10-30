@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import styles from "./Button.module.scss";
-import Badge from "../badge/Badge"; 
+import Badge from "../badge/Badge";
 
 interface ButtonProps {
   id: string;
@@ -9,30 +9,45 @@ interface ButtonProps {
   disabled?: boolean;
   onClick: () => void;
   selected?: boolean;
-  variant?: 'pill' | 'underline';
-  badgeVariant?: 'neutral' | 'positive' | 'negative';
+  variant?: "pill" | "underline";
+  badgeVariant?: "neutral" | "positive" | "negative";
   badgeLabel: string;
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ ariaControls, label, onClick, disabled, badgeLabel, badgeVariant, variant, selected }, ref) => {
-  return (
-    <button
-      id={`tab__${label}`}
-      aria-controls={ariaControls}
-      onClick={onClick}
-      disabled={disabled}
-      aria-selected={selected ? "true" : "false"}
-      tabIndex={selected ? 0 : -1}
-      className={`${styles.button} 
-        ${disabled ? styles['button--disabled'] : ''} 
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      ariaControls,
+      label,
+      onClick,
+      disabled,
+      badgeLabel,
+      badgeVariant,
+      variant,
+      selected,
+    },
+    ref,
+  ) => {
+    return (
+      <button
+        id={`tab__${label}`}
+        role="tab"
+        aria-controls={ariaControls}
+        onClick={onClick}
+        disabled={disabled}
+        aria-selected={selected ? "true" : "false"}
+        tabIndex={selected ? 0 : -1}
+        className={`${styles.button} 
+        ${disabled ? styles["button--disabled"] : ""} 
         ${styles[`button__${variant}`]} 
         ${selected ? styles[`button__${variant}--selected`] : styles[`button__${variant}--unselected`]}`}
-      ref={ref}
-    >
-      {label}
-      {badgeVariant && <Badge label={badgeLabel} variant={badgeVariant} />}
-    </button>
-  );
-});
+        ref={ref}
+      >
+        {label}
+        {badgeVariant && <Badge label={badgeLabel} variant={badgeVariant} />}
+      </button>
+    );
+  },
+);
 
 export default Button;

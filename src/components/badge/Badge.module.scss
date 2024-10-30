@@ -1,14 +1,14 @@
-@import '../../shared-mixins.scss';
+@import "../../shared-mixins.scss";
 
 .badge {
   min-width: px-to-rem(46px);
   min-height: px-to-rem(22px);
-  display: inline-flex;     
-  align-items: center;     
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
   border: none;
   cursor: pointer;
-  
+
   font-size: var(--prima-font-size);
   font-family: var(--prima-font-family);
   font-weight: 700;
@@ -20,7 +20,7 @@
   border-radius: px-to-rem(12px);
 
   @media (min-width: 768px) {
-    min-width: px-to-rem(54px); 
+    min-width: px-to-rem(54px);
     min-height: px-to-rem(26px);
     padding: var(--prima-spacing-3xs) var(--prima-spacing-2xs);
     margin-left: var(--prima-spacing-2xs);

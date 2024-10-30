@@ -1,8 +1,8 @@
-import Badge from './Badge';
-import { Meta } from '@storybook/react';
+import Badge from "./Badge";
+import { Meta } from "@storybook/react";
 
 export default {
-  title: 'Components/Badge',
+  title: "Components/Badge",
   component: Badge,
 } as Meta;
 

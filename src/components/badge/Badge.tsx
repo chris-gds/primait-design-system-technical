@@ -3,7 +3,7 @@ import styles from "./Badge.module.scss";
 
 interface BadgeProps {
   label: string;
-  variant?: 'neutral' | 'positive' | 'negative';
+  variant?: "neutral" | "positive" | "negative";
 }
 
 const Badge: React.FC<BadgeProps> = ({ label, variant }) => {
