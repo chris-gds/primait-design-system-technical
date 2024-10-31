@@ -49,15 +49,21 @@
   border-radius: var(--prima-spacing-3xs);
   margin-top: var(--prima-spacing-2xs);
 
+  &--hidden {
+    display: none;
+  }
+
+  &--active {
+    display: block;
+  }
+
   p {
     font-size: var(--prima-font-size-m);
     font-family: var(--prima-font-family);
   }
 }
 
-.tabContent--active {
-  display: block;
-}
+
 
 .tab {
   padding: 10px 20px;

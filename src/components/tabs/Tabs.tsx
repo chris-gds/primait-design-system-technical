@@ -59,7 +59,6 @@ const Tabs: React.FC<TabsProps> = ({ tabConfigs }) => {
         className={styles.tabsContainer}
         role="tablist"
         onKeyDown={handleKeyDown}
-        tabIndex={0}
         ref={tabsWrapperRef}
       >
         {tabConfigs.map((tab, index) => (
@@ -90,7 +89,8 @@ const Tabs: React.FC<TabsProps> = ({ tabConfigs }) => {
             key={index + 1}
             role="tabpanel"
             id={`panel__${index + 1}`}
-            className={`${styles.tabContent} ${activeTab === index + 1 ? styles["tabContent--active"] : ""}`}
+            aria-live="polite"
+            className={`${styles.tabContent} ${activeTab === index + 1 ? styles["tabContent--active"] : styles["tabContent--hidden"]}`}
           >
             <p>Content for {tab.label}</p>
           </div>

@@ -24,6 +24,11 @@
     color: #a0a0a0;
     cursor: not-allowed;
   }
+
+  &:focus {
+    @include button-focus;
+    outline: 2px solid var(--prima-button-color-inverse);
+  }
 }
 
 .button__pill {
