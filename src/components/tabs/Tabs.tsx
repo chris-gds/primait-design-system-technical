@@ -88,6 +88,7 @@ const Tabs: React.FC<TabsProps> = ({ tabConfigs }) => {
             aria-labelledby={`tab__${tab.label}`}
             key={index + 1}
             role="tabpanel"
+            tabIndex={activeTab === index + 1 ? 0 : -1}
             id={`panel__${index + 1}`}
             aria-live="polite"
             className={`${styles.tabContent} ${activeTab === index + 1 ? styles["tabContent--active"] : styles["tabContent--hidden"]}`}

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build-storybook": "storybook build",
+    "build": "vite build && pnpm run build-storybook && mv storybook-static dist/storybook",
     "dev": "vite",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prettier": "pnpm exec prettier src/ --write",
@@ -41,7 +42,7 @@
     "sass-embedded": "^1.80.4",
     "storybook": "^8.2.7",
     "typescript": "^5.2.2",
-    "vite": "^5.3.4",
+    "vite": "^5.4.10",
     "vitest": "^2.0.5"
   }
 }

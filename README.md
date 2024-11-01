@@ -4,9 +4,11 @@
 
 https://frontend-design-system-primait.netlify.app/
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/eec4f4b1-306f-40fe-9bd1-a2baff811818/deploy-status)](https://app.netlify.com/sites/frontend-design-system-primait/deploys)
+
 ## Figma file
 
-The figma file of the home test is available [here](https://www.figma.com/design/OclakAGLSXDoMKLFvwLNMP/%F0%9F%92%BB-Design-System-Home-Test---Tabs-Component?node-id=0-1&t=4pG7NN6HKxgxroDz-1).
+The [Figma file of the home test is available](https://www.figma.com/design/OclakAGLSXDoMKLFvwLNMP/%F0%9F%92%BB-Design-System-Home-Test---Tabs-Component?node-id=0-1&t=4pG7NN6HKxgxroDz-1).
 
 ## Stack
 
