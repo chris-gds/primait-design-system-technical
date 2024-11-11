@@ -100,3 +100,11 @@ Updated this to have basic views and options.  Did not include tests as out of s
 
 ![Storybook Screenshot of Design System Tabs Pill variant](image-1.jpeg)
 ![Storybook Screenshot of Design System Tabs Underline variant](image-2.jpeg)
+
+## Outcome
+
+"The first stage does involve a code challenge where is roughly 120 mins long and we really appreciate your time and efforts in completing this."
+
+"We've made the tough decision to pursue other candidates who more closely align with our current needs."
+
+No feedback provided.
